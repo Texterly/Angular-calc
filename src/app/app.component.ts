@@ -8,4 +8,5 @@ import { HeaderComponent } from './header/header.component';
 })
 export class AppComponent {
   title = 'first-app';
+  mode = true;
 }

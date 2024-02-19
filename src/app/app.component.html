@@ -1,6 +1,10 @@
 <div class="calculator">
-  <div class="wrapper">
+  <div
+    [ngStyle]="{ backgroundColor: mode ? 'yellow' : 'blue' }"
+    class="wrapper"
+  >
     <app-header></app-header>
     <app-calculator></app-calculator>
+    <div (click)="mode = !mode" class="mode">mode</div>
   </div>
 </div>

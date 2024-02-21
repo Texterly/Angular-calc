@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from './header/header.component';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +7,17 @@ import { HeaderComponent } from './header/header.component';
 })
 export class AppComponent {
   title = 'first-app';
-  mode = true;
+  mode: boolean = true;
+  currValue: string = '0';
+
+  onButtonClicked(value: string) {
+    this.writeToInput(value);
+  }
+
+  writeToInput(value: string) {
+    this.currValue = this.currValue + value;
+  }
 }
+
+// eval
+// Subject

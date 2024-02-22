@@ -1,10 +1,7 @@
 <div class="calculator">
-  <div
-    [ngStyle]="{ backgroundColor: mode ? 'yellow' : 'blue' }"
-    class="wrapper"
-  >
-    <app-header></app-header>
-    <app-calculator></app-calculator>
+  <div [ngStyle]="{ backgroundColor: mode ? 'red' : 'gray' }" class="wrapper">
+    <app-header [inputValue]="currValue"></app-header>
+    <app-calculator (buttonClicked)="onButtonClicked($event)"></app-calculator>
     <div (click)="mode = !mode" class="mode">mode</div>
   </div>
 </div>

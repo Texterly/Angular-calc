@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,7 +9,13 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./calculator.component.scss'],
 })
 export class CalculatorComponent implements OnInit {
-  nums = [
+  @Output() buttonClicked: EventEmitter<string> = new EventEmitter<string>();
+
+  buttonPress(value: string): void {
+    this.buttonClicked.emit(value);
+  }
+
+  readonly nums: string[] = [
     '9',
     '8',
     '7',
@@ -27,12 +33,11 @@ export class CalculatorComponent implements OnInit {
     '=',
     'c',
   ];
-  currValue = '';
-  writetoinput(value: any) {
-    this.currValue = this.currValue + value;
-    const toshow = this.currValue;
-  }
+
   constructor() {}
 
   ngOnInit(): void {}
 }
+
+// chatGpt types
+// ||||
